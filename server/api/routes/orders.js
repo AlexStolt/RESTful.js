@@ -13,7 +13,14 @@ router
         
     })
     .post('/', (req, res) => {
-        
+        const order = {
+            orderId: req.body.orderId,
+            quantity: req.body.quantity
+        }
+        res.status(201).json({
+            message: "Serving Requested Orders Data",
+            order: order
+        })
     })
     .delete('/:ID', (req, res) => {
         //Extract ID
